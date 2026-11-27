@@ -1,0 +1,8 @@
+Proceso LlegarUniversidad
+    Escribir "1. Salir de casa."
+    Escribir "2. Pedir inDrive ."
+    Escribir "3. Trasladarse hacia la universidad."
+    Escribir "4. Descender del transporte e ingresar Con El Carnet Universitario."
+    Escribir "5. Buscar el bloque y el aula correspondiente o entrar a la app para buscar mejor."
+    Escribir "6. Ingresar al aula y tomar asiento."
+FinProceso
