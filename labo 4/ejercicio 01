@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string nombre, categoria;
+    double m3, valorM3 = 0, montoFijo = 10.0, pagoTotal;
+
+    cout << "Ingrese el nombre del cliente: ";
+    getline(cin, nombre);
+    cout << "Ingrese el consumo en metros cubicos (m3): ";
+    cin >> m3;
+
+    if (m3 > 0 && m3 <= 15) {
+        valorM3 = 1.20;
+        categoria = "Consumo Minimo";
+    } else if (m3 > 15 && m3 <= 35) {
+        valorM3 = 2.50;
+        categoria = "Consumo Domestico";
+    } else if (m3 > 35 && m3 <= 70) {
+        valorM3 = 4.00;
+        categoria = "Consumo Comercial";
+    } else if (m3 > 70) {
+        valorM3 = 6.50;
+        categoria = "Consumo Alto / Industrial";
+    } else {
+        cout << "Consumo no valido." << endl;
+        return 0;
+    }
+
+    pagoTotal = montoFijo + (m3 * valorM3);
+
+    cout << "- FACTURA DE AGUA -" << endl;
+    cout << "Nombre del cliente: " << nombre << endl;
+    cout << "Categoria asignada: " << categoria << endl;
+    cout << "Monto a pagar: Bs " << montoFijo << endl;
+    cout << "Pago total: Bs " << pagoTotal << endl;
+
+    return 0;
+}
