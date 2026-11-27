@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string nombre, carrera;
+    int edad, semestre;
+    double promedio;
+
+    cout << "Ingrese el nombre del estudiante: ";
+    getline(cin, nombre);  //el getline(cin, x)
+    cout << "Ingrese la edad: ";
+    cin >> edad;
+    cin.ignore();
+    cout << "Ingrese la carrera: ";
+    getline(cin, carrera);
+    cout << "Ingrese el semestre: ";
+    cin >> semestre;
+    cout << "Ingrese el promedio final: ";
+    cin >> promedio;
+
+    cout << "--- DATOS REGISTRADOS ---" << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Edad: " << edad << endl;
+    cout << "Carrera: " << carrera << endl;
+    cout << "Semestre: " << semestre << endl;
+    cout << "Promedio final: " << promedio << endl;
+
+    if (promedio >= 51) {
+        cout << "El estudiante APROBO" << endl;
+    } else {
+        cout << "El estudiante REPROBO" << endl;
+    }
+
+    return 0;
+}
