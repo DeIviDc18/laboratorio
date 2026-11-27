@@ -1,0 +1,9 @@
+//Proceso ServirseCafe
+    Escribir "1. Tomar una taza limpia."
+    Escribir "2. Colocar la taza frente a la cafetera."
+    Escribir "3. Servir el cafe preparado en la taza."
+    Escribir "4. Agregar azucar al gusto."
+    Escribir "5. Mezclar con una cuchara hasta disolver el azucar."
+    Escribir "Taza de cafe lista para consumir."
+    Escribir "DISFRUTE SU TAZA DE CAFE :) "
+FinProceso
