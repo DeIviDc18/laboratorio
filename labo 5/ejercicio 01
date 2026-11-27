@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char opcion;
+    double peso, tarifaBase, precioExtra, costoTotal;
+
+    do {
+        cout << "\n--- SISTEMA DE ENVIOS Y ENCOMIENDAS ---" << endl;
+        cout << "[L/l] La Paz / El Alto" << endl;
+        cout << "[C/c] Cochabamba" << endl;
+        cout << "[S/s] Santa Cruz" << endl;
+        cout << "[X/x] Salir del sistema" << endl;
+        cout << "Seleccione destino: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 'L':
+            case 'l':
+                cout << "Ingrese el peso del paquete (Kg): ";
+                cin >> peso;
+                tarifaBase = 7.00;
+                precioExtra = 3.00;
+                costoTotal = (peso > 2) ? tarifaBase + (peso - 2) * precioExtra : tarifaBase;
+                cout << "Costo de envio a La Paz / El Alto: Bs " << costoTotal << endl;
+                break;
+
+            case 'C':
+            case 'c':
+                cout << "Ingrese el peso del paquete (Kg): ";
+                cin >> peso;
+                tarifaBase = 5.00;
+                precioExtra = 2.00;
+                costoTotal = (peso > 2) ? tarifaBase + (peso - 2) * precioExtra : tarifaBase;
+                cout << "Costo de envio a Cochabamba: Bs " << costoTotal << endl;
+                break;
+
+            case 'S':
+            case 's':
+                cout << "Ingrese el peso del paquete (Kg): ";
+                cin >> peso;
+                tarifaBase = 8.00;
+                precioExtra = 4.00;
+                costoTotal = (peso > 2) ? tarifaBase + (peso - 2) * precioExtra : tarifaBase;
+                cout << "Costo de envio a Santa Cruz: Bs " << costoTotal << endl;
+                break;
+
+            case 'X':
+            case 'x':
+                cout << "Saliendo del sistema..." << endl;
+                break;
+
+            default:
+                cout << "Opcion no valida. Intente nuevamente." << endl;
+        }
+    } while (opcion != 'X' && opcion != 'x');
+
+    return 0;
+}
