@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double precio, total, descuento, totalPagar;
+    int cantidad;
+
+    cout << "Ingrese el precio del producto: ";
+    cin >> precio;
+    cout << "Ingrese la cantidad comprada: ";
+    cin >> cantidad;
+//me confundi un poco al principio
+    total = precio * cantidad;
+    descuento = total * 0.10;
+    totalPagar = total - descuento;
+
+    cout << "Total sin descuento: " << total << endl;
+    cout << "Descuento del 10%: " << descuento << endl;
+    cout << "Total a pagar: " << totalPagar << endl;
+
+    return 0;
+}
