@@ -21,8 +21,7 @@ int main() {
         entregas++;
     }
 
-    cout << "
---- RESUMEN DE RECORRIDO ---" << endl;
+    cout << "--- RESUMEN DE RECORRIDO ---" << endl;
     cout << "Cantidad de entregas realizadas: " << entregas << endl;
     cout << "Total de combustible consumido: " << totalConsumido << " litros" << endl;
     cout << "Combustible restante: " << combustible << " litros" << endl;
