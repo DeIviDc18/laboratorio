@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int leerDias();
+string clasificarVenta(double monto);
+void procesarVentas(int dias, double &totalVendido, double &promedio, int &diasMayores1000);
+void mostrarResultados(double totalVendido, double promedio, int diasMayores1000);
+
+int main() {
+    int dias, diasMayores1000;
+    double totalVendido, promedio;
+
+    dias = leerDias();
+    procesarVentas(dias, totalVendido, promedio, diasMayores1000);
+    mostrarResultados(totalVendido, promedio, diasMayores1000);
+
+    return 0;
+}
+
+int leerDias() {
+    int d;
+    do {
+        cout << "Ingrese la cantidad de dias a evaluar: ";
+        cin >> d;
+    } while (d <= 0);
+    return d;
+}
+
+string clasificarVenta(double monto) {
+    if (monto > 1000) {
+        if (monto > 2000) {
+            return "Venta excelente";
+        } else {
+            return "Venta alta";
+        }
+    } else {
+        if (monto < 500) {
+            return "Venta baja";
+        } else {
+            return "Venta regular";
+        }
+    }
+}
+
+void procesarVentas(int dias, double &totalVendido, double &promedio, int &diasMayores1000) {
+    double monto;
+    totalVendido = 0;
+    diasMayores1000 = 0;
+
+    for (int i = 1; i <= dias; i++) {
+        do {
+            cout << "Ingrese el monto vendido el dia " << i << " (Bs): ";
+            cin >> monto;
+        } while (monto < 0);
+
+        cout << "Clasificacion dia " << i << ": " << clasificarVenta(monto) << endl;
+
+        totalVendido += monto;
+        if (monto > 1000) {
+            diasMayores1000++;
+        }
+    }
+    promedio = totalVendido / dias;
+}
+
+void mostrarResultados(double totalVendido, double promedio, int diasMayores1000) {
+    cout << "--- RESUMEN GENERAL ---" << endl;
+    cout << "Monto total vendido: Bs " << totalVendido << endl;
+    cout << "Promedio diario: Bs " << promedio << endl;
+    cout << "Dias con ventas superiores a Bs 1000: " << diasMayores1000 << endl;
+}
