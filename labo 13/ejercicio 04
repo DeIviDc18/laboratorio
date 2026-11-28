@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string extraerTexto(string mensaje, int inicio, int cantidad);
+
+int main() {
+    string mensaje, fragmento;
+    int inicio, cantidad;
+
+    cout << "Ingrese el mensaje: ";
+    getline(cin, mensaje);
+
+    do {
+        cout << "Ingrese la posicion inicial (0 - " << mensaje.length() - 1 << "): ";
+        cin >> inicio;
+    } while (inicio < 0 || inicio >= static_cast<int>(mensaje.length()));
+
+    do {
+        cout << "Ingrese la cantidad de caracteres a extraer: ";
+        cin >> cantidad;
+    } while (cantidad <= 0);
+
+    fragmento = extraerTexto(mensaje, inicio, cantidad);
+    cout << "Fragmento extraido: " << fragmento << endl;
+
+    return 0;
+}
+
+string extraerTexto(string mensaje, int inicio, int cantidad) {
+    return mensaje.substr(inicio, cantidad);
+}
