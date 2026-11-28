@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void registrar(string &mensaje, string &buscar, string &nueva);
+void corregir(string &mensaje, string buscar, string nueva);
+void agregarSaludo(string &mensaje);
+void mostrar(string original, string modificado);
+
+int main() {
+    string original, modificado, buscar, nueva;
+
+    registrar(original, buscar, nueva);
+    modificado = original;
+
+    corregir(modificado, buscar, nueva);
+    agregarSaludo(modificado);
+    mostrar(original, modificado);
+
+    return 0;
+}
+
+void registrar(string &mensaje, string &buscar, string &nueva) {
+    cout << "Ingrese el mensaje comercial: ";
+    getline(cin, mensaje);
+    cout << "Ingrese la palabra incorrecta: ";
+    getline(cin, buscar);
+    cout << "Ingrese su reemplazo: ";
+    getline(cin, nueva);
+}
+
+void corregir(string &mensaje, string buscar, string nueva) {
+    size_t pos = mensaje.find(buscar);
+    if (pos != string::npos && pos < mensaje.length()) {
+        mensaje.replace(pos, buscar.length(), nueva);
+    } else {
+        cout << "Aviso: La palabra incorrecta no se encontro en el mensaje." << endl;
+    }
+}
+
+void agregarSaludo(string &mensaje) {
+    mensaje.insert(0, "Estimado cliente: ");
+}
+
+void mostrar(string original, string modificado) {
+    cout << "
+Mensaje original: " << original << endl;
+    cout << "Mensaje modificado: " << modificado << endl;
+}
