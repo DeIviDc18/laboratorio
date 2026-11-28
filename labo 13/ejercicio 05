@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void reemplazarPalabra(string &mensaje, string buscar, string nueva);
+
+int main() {
+    string mensaje, buscar, nueva;
+
+    cout << "Ingrese el mensaje: ";
+    getline(cin, mensaje);
+    cout << "Ingrese la palabra que desea sustituir: ";
+    getline(cin, buscar);
+    cout << "Ingrese la palabra nueva: ";
+    getline(cin, nueva);
+
+    reemplazarPalabra(mensaje, buscar, nueva);
+    cout << "Mensaje actualizado: " << mensaje << endl;
+
+    return 0;
+}
+
+void reemplazarPalabra(string &mensaje, string buscar, string nueva) {
+    size_t pos = mensaje.find(buscar);
+    if (pos != string::npos && pos < mensaje.length()) {
+        mensaje.replace(pos, buscar.length(), nueva);
+    } else {
+        cout << "La palabra '" << buscar << "' no existe en el mensaje." << endl;
+    }
+}
